@@ -84,28 +84,28 @@ import cv2
 
 
 # 7 카메라로 녹화하기
-cap = cv2.VideoCapture(0)
+# cap = cv2.VideoCapture(0)
 
-if cap.isOpened():
-    file_path = "record.avi"
-    fps = 25.40
-    fourcc = cv2.VideoWriter_fourcc(*'DIVX')
-    width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
-    height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
-    size = (int(width), int(height)) # frame 크기
-    out = cv2.VideoWriter(file_path, fourcc, fps, size) # 비디오 writer 객체 생성 // 저장할 파일 이름, 4글자 인코딩, fps, 프레임 사이즈
+# if cap.isOpened():
+#     file_path = "record.avi"
+#     fps = 25.40
+#     fourcc = cv2.VideoWriter_fourcc(*'DIVX')
+#     width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+#     height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+#     size = (int(width), int(height)) # frame 크기
+#     out = cv2.VideoWriter(file_path, fourcc, fps, size) # 비디오 writer 객체 생성 // 저장할 파일 이름, 4글자 인코딩, fps, 프레임 사이즈
 
-    while True:
-        ret, frame = cap.read()
-        if ret:
-            cv2.imshow('cam-record', frame)
-            out.write(frame)
-            if cv2.waitKey(int(1000/fps)) != 1:
-                break
-        else:
-            break
-    out.release()
-else:
-    print("no cam")
-cap.release()
-cv2.destroyAllWindows()
+#     while True:
+#         ret, frame = cap.read()
+#         if ret:
+#             cv2.imshow('cam-record', frame)
+#             out.write(frame)
+#             if cv2.waitKey(int(1000/fps)) != 1:
+#                 break
+#         else:
+#             break
+#     out.release()
+# else:
+#     print("no cam")
+# cap.release()
+# cv2.destroyAllWindows()
