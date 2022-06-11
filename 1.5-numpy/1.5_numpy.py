@@ -69,3 +69,5 @@ print(a)
 print(b)
 print(c)
 print(d)
+
+cv2.imshow("img", d)
